@@ -1,10 +1,10 @@
 import math
 
-a = (input(" ax2 + bx + c = d Geben Sie den Koeffizient der ersten Gleichung a an:"))
-b = (input(" ax2 + bx + c = d Geben Sie den Koeffizient der ersten Gleichung b an:"))
-c = (input(" ax2 + bx + c = d Geben Sie den Koeffizient der ersten Gleichung c an:"))
+a = (input(" ax2 + bx + c = d Type the first(a) coefficient in :"))
+b = (input(" ax2 + bx + c = d Type the second(b) coefficient in:"))
+c = (input(" ax2 + bx + c = d Type the third(c) coefficient in:"))
 
-def loese(a, b, c):
+def solve(a, b, c):
     
     if(a == 1):
         try:
@@ -20,4 +20,4 @@ def loese(a, b, c):
     else:
         x = 1/a
 
-loese(a, b, c)
+solve(a, b, c)
