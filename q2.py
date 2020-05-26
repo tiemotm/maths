@@ -1,12 +1,13 @@
 import math
 
-a = (input(" ax2 + bx + c = d Type the first(a) coefficient in :"))
-b = (input(" ax2 + bx + c = d Type the second(b) coefficient in:"))
-c = (input(" ax2 + bx + c = d Type the third(c) coefficient in:"))
+a = int(input(" a*x2 + b*x + c = d Type the first(a) coefficient in :"))
+b = int(input(" a*x2 + b*x + c = d Type the second(b) coefficient in:"))
+c = int(input(" a*x2 + b*x + c = d Type the third(c) coefficient in:"))
+d = int(input(" a*x2 + b*x + c = d Type the fourth(d) coefficient in:"))
 
-def solve(a, b, c):
+def solve(a, b, c, d):
     
-    if(a == 1):
+    if(a == 1 and d == 0):
         try:
             sq = (((b/2)**2 - c))
             sqrt = math.sqrt(sq)
@@ -14,10 +15,21 @@ def solve(a, b, c):
             x1 = (-(b/2) + sqrt)
             x2 = (-(b/2) - sqrt)
 
-            print("x1 =",x1,", x2 =",x2)
+            if(x1 == x2):
+                print("x =",x1)
+            else:
+                print("x1 =",x1,", x2 =",x2)
         except:
-            print("Keine Lösung")
+            print("No Solution")
     else:
-        x = 1/a
+        aOld = a
+        a = a/aOld
+        b = b/aOld
+        c = c/aOld
 
-solve(a, b, c)
+        d = d/aOld
+        c = c - d
+        d = d - d
+        solve(a, b, c, d)
+
+solve(a, b, c, d)
